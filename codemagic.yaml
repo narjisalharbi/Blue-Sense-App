@@ -1,11 +1,5 @@
-cripts:
-  - name: Install Flutter dependencies
+scripts:
+  - name: Install CocoaPods dependencies
     script: |
-      flutter pub get
       cd ios
       pod install
-      cd ..
-
-  - name: Build iOS .ipa
-    script: |
-      flutter build ios --release --no-codesign
