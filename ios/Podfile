@@ -1,13 +1,24 @@
 platform :ios, '13.0'
 
-# هذا السطر ضروري جدًا لتعريف دوال flutter مثل flutter_install_all_ios_pods
-require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), __dir__)
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
 
-flutter_ios_podfile_setup
+# CocoaPods analytics sends network stats synchronously affecting flutter build latency.
+ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
+project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+}
+
+install! 'cocoapods' # ← لا تستخدم :repo_update هنا لأن بعض إصدارات CocoaPods ترفضها
+
+require File.expand_path(File.join('Flutter', 'podhelper'), __dir__)
 
 target 'Runner' do
-use_frameworks!
-use_modular_headers!
+  use_frameworks!
+  use_modular_headers!
 
-flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+  flutter_install_all_ios_pods(File.dirname(File.realpath(__FILE__)))
 end
