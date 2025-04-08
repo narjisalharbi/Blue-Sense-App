@@ -1,14 +1,8 @@
 platform :ios, '13.0'
-install! 'cocoapods', :repo_update => true
 
 target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
-  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__)) if defined?(flutter_install_all_ios_pods)
-
-  # أو يمكنك إضافة الـ plugins يدويًا:
-  # pod 'Firebase/Core'
-  # pod 'Firebase/Auth'
-  # pod 'cloud_firestore'
+  flutter_install_all_ios_pods(File.dirname(File.realpath(__FILE__))) if defined?(flutter_install_all_ios_pods)
 end
