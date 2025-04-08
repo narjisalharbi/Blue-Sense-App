@@ -8,4 +8,5 @@ use_modular_headers!
 pod 'Firebase/Core'
 pod 'Firebase/Firestore'
 pod 'cloud_firestore'
+install! 'cocoapods', :repo_update => true
 end
