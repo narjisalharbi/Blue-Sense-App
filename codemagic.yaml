@@ -1,5 +1,31 @@
-scripts:
-  - name: Install CocoaPods dependencies
-    script: |
-      cd ios
-      pod install
+workflows:
+  flutter-app-workflow:
+    name: Build Flutter App
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      vars:
+        BUNDLE_ID: "com.example.registerApp2" # ← غيره حسب مشروعك
+    triggering:
+      events:
+        - push
+        - pull_request
+      branch_patterns:
+        - pattern: "main"
+          include: true
+          source: true
+    scripts:
+      - name: Install dependencies
+        script: |
+          flutter pub get
+      - name: Build APK
+        script: |
+          flutter build apk --release
+      - name: Build IPA
+        script: |
+          flutter build ios --release --no-codesign
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+      - build/ios/iphoneos/Runner.app
