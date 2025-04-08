@@ -1,20 +1,6 @@
 platform :ios, '13.0'
 
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
-
-# CocoaPods analytics sends network stats synchronously affecting flutter build latency.
-ENV['COCOAPODS_DISABLE_STATS'] = 'true'
-
-project 'Runner', {
-  'Debug' => :debug,
-  'Profile' => :release,
-  'Release' => :release,
-}
-
-install! 'cocoapods' # ← لا تستخدم :repo_update هنا لأن بعض إصدارات CocoaPods ترفضها
-
-require File.expand_path(File.join('Flutter', 'podhelper'), __dir__)
+install! 'cocoapods'
 
 target 'Runner' do
   use_frameworks!
