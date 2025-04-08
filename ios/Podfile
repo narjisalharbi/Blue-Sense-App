@@ -1,9 +1,5 @@
-install! 'cocoapods', :repo_update => true
-
 platform :ios, '13.0'
-
-# هذا السطر مهم جدًا
-require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), __dir__)
+install! 'cocoapods', :repo_update => true
 
 target 'Runner' do
   use_frameworks!
