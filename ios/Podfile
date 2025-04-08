@@ -1,12 +1,12 @@
+install! 'cocoapods', :repo_update => true
+
 platform :ios, '13.0'
 
+# بقية ملف Podfile
 target 'Runner' do
-use_frameworks!
-use_modular_headers!
+  use_frameworks!
+  use_modular_headers!
 
-# Flutter pods
-pod 'Firebase/Core'
-pod 'Firebase/Firestore'
-pod 'cloud_firestore'
-install! 'cocoapods', :repo_update => true
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+
 end
