@@ -1,0 +1,144 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const FigmaToCodeApp());
+}
+
+class FigmaToCodeApp extends StatelessWidget {
+  const FigmaToCodeApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
+      ),
+      home: const Scaffold(
+        body: SingleChildScrollView(
+          child: Iphone13Mini25(),
+        ),
+      ),
+    );
+  }
+}
+
+class Iphone13Mini25 extends StatelessWidget {
+  const Iphone13Mini25({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          width: double.infinity,
+          height: 976,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xFF87CDF2),
+                Color(0xFF0D3E58),
+                Color(0xCC49A3D1),
+                Color(0xE587C0DD),
+                Color(0xFFDCE9F0),
+                Color(0xFFD0E1EB),
+                Color(0xFFDFF4FF),
+                Colors.white,
+              ],
+            ),
+          ),
+          child: Stack(
+            children: [
+              Positioned(
+                left: 76,
+                top: 239,
+                child: Container(
+                  width: 249,
+                  height: 366,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("images/Welcome.jpeg"), 
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(80),
+                      topRight: Radius.circular(80),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 57,
+                top: 111,
+                child: SizedBox(
+                  width: 305,
+                  child: Text(
+                    'Welcome\nBlue Sense!',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 40,
+                      fontFamily: 'Inria Serif',
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 3,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 65,
+                top: 669,
+                child: Container(
+                  width: 300,
+                  height: 70,
+                  decoration: BoxDecoration(
+                    color: const Color(0xCC035079),
+                    borderRadius: BorderRadius.circular(26),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Sign up',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30,
+                        fontFamily: 'Inria Serif',
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: 3,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 65,
+                top: 757,
+                child: Container(
+                  width: 300,
+                  height: 70,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(26),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Sign in',
+                      style: TextStyle(
+                        color: Color(0xFF035079),
+                        fontSize: 30,
+                        fontFamily: 'Inria Serif',
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: 3,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}

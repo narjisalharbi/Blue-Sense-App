@@ -1,0 +1,13 @@
+platform :ios, '13.0'
+
+# هذا السطر ضروري جدًا لتعريف دوال flutter مثل flutter_install_all_ios_pods
+require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), __dir__)
+
+flutter_ios_podfile_setup
+
+target 'Runner' do
+use_frameworks!
+use_modular_headers!
+
+flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+end
